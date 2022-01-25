@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Navbar from "./Navbar";
 
 const Header = (props) => {
   return (
@@ -13,8 +14,8 @@ const Header = (props) => {
 const HeaderWrapper = styled.header`
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 2rem;
+  justify-content: space-around;
+  padding: 1rem;
   background-color: ${({ theme }) => theme.colors.primaryDark};
 `;
 const StyledHeading = styled.header`
