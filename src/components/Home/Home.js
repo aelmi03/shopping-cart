@@ -46,7 +46,7 @@ const HomeWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
