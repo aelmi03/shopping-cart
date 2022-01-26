@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import homeImage from "../../assets/home-image.jpeg";
 
 const Home = (props) => {
   return (
@@ -10,11 +11,7 @@ const Home = (props) => {
         </HomeHeader>
         <HomeButton>Shop Now</HomeButton>
       </ContentWrapper>
-      <HomeImage
-        src={
-          "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-        }
-      ></HomeImage>
+      <HomeImage src={homeImage}></HomeImage>
     </HomeWrapper>
   );
 };
@@ -64,7 +61,11 @@ const HomeDescription = styled.h2`
   font-size: 2.1rem;
   font-family: "Poppins", monospace;
   font-weight: 700;
+  letter-spacing: 5px;
   color: ${({ theme }) => theme.colors.neutral};
+  @media (min-width: 1024px) {
+    font-size: 2.4rem;
+  }
 `;
 
 const HomeHeader = styled.h2`
@@ -72,7 +73,7 @@ const HomeHeader = styled.h2`
   font-weight: bold;
   font-family: "Poppins", sans-serif;
   color: ${({ theme }) => theme.colors.secondaryText};
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     font-size: 5rem;
   }
 `;
@@ -92,7 +93,7 @@ const HomeButton = styled.button`
   &:hover {
     transform: scale(1.1);
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     font-size: 3.2rem;
   }
 `;
