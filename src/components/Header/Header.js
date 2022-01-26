@@ -22,7 +22,7 @@ const HeaderWrapper = styled.header`
 const StyledHeading = styled.header`
   font-size: 6rem;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: ${({ theme }) => theme.colors.secondary};
   text-shadow: 1px 1px ${({ theme }) => theme.colors.secondaryText};
 `;

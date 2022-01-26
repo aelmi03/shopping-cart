@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import StyledLink from "./StyledLink";
-import { FaCartPlus } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = (props) => {
   return (
@@ -10,8 +10,8 @@ const Navbar = (props) => {
       <StyledLink to="/shop">Shop</StyledLink>
       <StyledLink to="/checkout">
         <IconWrapper className="icon-wrapper">
-          <FaCartPlus />
-          <CartNumberWrapper>12</CartNumberWrapper>
+          <FaShoppingCart />
+          <CartNumberWrapper>100</CartNumberWrapper>
         </IconWrapper>
       </StyledLink>
     </NavbarWrapper>
@@ -30,6 +30,7 @@ const NavbarWrapper = styled.ul`
     color: ${({ theme }) => theme.colors.primaryText};
     font-family: "Poppins", sans-serif;
     position: relative;
+    font-weight: 400;
     transition: all 0.3s ease-in-out;
     &:hover {
       transform: scale(1.2);
@@ -73,7 +74,7 @@ const CartNumberWrapper = styled.div`
   );
 
   color: ${({ theme }) => theme.colors.secondaryText};
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 0.45rem;
   z-index: 5;
 `;
