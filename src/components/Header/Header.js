@@ -16,6 +16,7 @@ const HeaderWrapper = styled.header`
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 1rem;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.primaryDark};
 `;
 const StyledHeading = styled.header`

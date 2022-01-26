@@ -20,7 +20,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Nunito", sans-serif;
     font-size: 1.6rem;
     background-color: ${({ theme }) => theme.colors.primaryText};
-    margin-bottom: 100px;
+    margin-bottom:100px;
+  }
+  #root{
+    display:flex;
+    flex-flow: column nowrap;
+    min-height:100vh;
   }
   header {
     font-size: 2.4rem;
