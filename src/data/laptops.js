@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-const electronics = [
+const laptops = [
   {
     id: uniqid(),
     name: 'Acer 11" Chromebook - Black',
@@ -84,4 +84,4 @@ const electronics = [
   },
 ];
 
-export default electronics;
+export default laptops;
