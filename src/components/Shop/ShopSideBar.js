@@ -1,19 +1,39 @@
 import styled from "styled-components";
+import allProducts from "../../data/allProducts";
+import computers from "../../data/computers";
+import laptops from "../../data/laptops";
+import tablets from "../../data/tablets";
+import phones from "../../data/phones";
+import headphones from "../../data/headphones";
 
-const ShopSideBar = (props) => {
+const ShopSideBar = ({ category, changeCategory }) => {
   return (
     <ShopWrapper>
       <ShopHeading>
         <ShopTitle>Shop /</ShopTitle>
-        <ShopCategory>All Products</ShopCategory>
+        <ShopCategory>{category}</ShopCategory>
       </ShopHeading>
       <ShopCategories>
-        <Category>Computers</Category>
-        <Category>Laptops</Category>
-        <Category>Tablets</Category>
-        <Category>Phones</Category>
-        <Category>Headphones</Category>
-        <Category>All Products</Category>
+        <Category onClick={changeCategory.bind(this, "Computers", computers)}>
+          Computers
+        </Category>
+        <Category onClick={changeCategory.bind(this, "Laptops", laptops)}>
+          Laptops
+        </Category>
+        <Category onClick={changeCategory.bind(this, "Tablets", tablets)}>
+          Tablets
+        </Category>
+        <Category onClick={changeCategory.bind(this, "Phones", phones)}>
+          Phones
+        </Category>
+        <Category onClick={changeCategory.bind(this, "Headphones", headphones)}>
+          Headphones
+        </Category>
+        <Category
+          onClick={changeCategory.bind(this, "All Products", allProducts)}
+        >
+          All Products
+        </Category>
       </ShopCategories>
     </ShopWrapper>
   );

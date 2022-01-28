@@ -29,6 +29,15 @@ const ProductWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.primaryText};
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media (min-width: 768px) {
+    width: 40rem;
+    height: 55rem;
+    justify-content: space-evenly;
+  }
 `;
 
 const ImgWrapper = styled.img`
@@ -41,12 +50,18 @@ const NameWrapper = styled.h4`
   font-size: 2rem;
   flex-grow: 1;
   color: ${({ theme }) => theme.colors.secondaryText};
+  @media (min-width: 768px) {
+    flex-grow: 0;
+  }
 `;
 
 const PriceWrapper = styled.h4`
   font-size: 2.4rem;
   font-family: "Montserrat", sans-serif;
   color: ${({ theme }) => theme.colors.secondaryText};
+  @media (min-width: 768px) {
+    font-size: 2.7rem;
+  }
 `;
 
 const ButtonWrapper = styled.button`

@@ -2,20 +2,24 @@ import styled from "styled-components";
 import ShopSideBar from "./ShopSideBar";
 import allProducts from "../../data/allProducts";
 import ProductCard from "./ProductCard";
+import { useState } from "react";
 import { keyframes } from "styled-components";
 const Shop = () => {
+  const [products, setProducts] = useState(allProducts);
+  const [category, setCategory] = useState("All Products");
+  const getProducts = () => {
+    return products.map(({ name, price, imgSrc }) => (
+      <ProductCard name={name} price={price} imgSrc={imgSrc} />
+    ));
+  };
+  const changeCategory = (categoryName, products) => {
+    setProducts(products);
+    setCategory(categoryName);
+  };
   return (
     <ShopWrapper>
-      <ShopSideBar />
-      <CardsWrapper>
-        {allProducts.map((card) => (
-          <ProductCard
-            imgSrc={card.imgSrc}
-            name={card.name}
-            price={card.price}
-          />
-        ))}
-      </CardsWrapper>
+      <ShopSideBar category={category} changeCategory={changeCategory} />
+      <CardsWrapper>{getProducts()}</CardsWrapper>
     </ShopWrapper>
   );
 };
