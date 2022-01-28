@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 
-const Header = ({ allProducts }) => {
-  console.log(allProducts);
+const Header = ({ cartAmount }) => {
   return (
     <HeaderWrapper>
       <StyledHeading>Cartmax</StyledHeading>
-      <Navbar />
+      <Navbar cartAmount={cartAmount} />
     </HeaderWrapper>
   );
 };

@@ -3,7 +3,8 @@ import styled from "styled-components";
 import StyledLink from "./StyledLink";
 import { FaShoppingCart } from "react-icons/fa";
 
-const Navbar = (props) => {
+const Navbar = ({ cartAmount }) => {
+  console.log(cartAmount);
   return (
     <NavbarWrapper>
       <StyledLink to="/">Home</StyledLink>
@@ -11,7 +12,9 @@ const Navbar = (props) => {
       <StyledLink to="/checkout">
         <IconWrapper className="icon-wrapper">
           <FaShoppingCart />
-          <CartNumberWrapper>100</CartNumberWrapper>
+          {cartAmount > 0 && (
+            <CartNumberWrapper>{cartAmount}</CartNumberWrapper>
+          )}
         </IconWrapper>
       </StyledLink>
     </NavbarWrapper>

@@ -7,7 +7,12 @@ import Shop from "./components/Shop/Shop.js";
 import { useState } from "react";
 
 function App() {
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState([
+    {
+      product: allProducts[0],
+      amount: 35,
+    },
+  ]);
   const deleteProduct = (productObject) => {
     setCartProducts(
       cartProducts.filter((product) => product.id !== productObject.id)
@@ -45,10 +50,14 @@ function App() {
       changeProductAmount(productObject, amount);
     }
   };
-
+  const getAmountTotal = () => {
+    return cartProducts.reduce((currentValue, prevProduct) => {
+      return prevProduct.amount + currentValue;
+    }, 0);
+  };
   return (
     <Router>
-      <Header allProducts={allProducts} />
+      <Header cartAmount={getAmountTotal()} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
