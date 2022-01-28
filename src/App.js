@@ -2,27 +2,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.js";
 import Home from "./components/Home/Home.js";
 import Footer from "./components/Footer.js";
-import allProducts from "./data/allProducts.js";
 import Shop from "./components/Shop/Shop.js";
 import { useState } from "react";
 
 function App() {
-  const [cartProducts, setCartProducts] = useState([
-    {
-      product: allProducts[0],
-      amount: 35,
-    },
-  ]);
+  const [cartProducts, setCartProducts] = useState([]);
+  console.log(cartProducts);
   const deleteProduct = (productObject) => {
     setCartProducts(
       cartProducts.filter((product) => product.id !== productObject.id)
     );
   };
   const addProduct = (productObject) => {
-    setCartProducts(...cartProducts, {
-      product: productObject,
-      amount: 1,
-    });
+    setCartProducts([...cartProducts, { ...productObject, amount: 1 }]);
   };
 
   const changeProductAmount = (productObject, amount) => {
@@ -30,7 +22,7 @@ function App() {
       cartProducts.map((product) => {
         if (product.id === productObject.id) {
           return {
-            product,
+            ...product,
             amount,
           };
         }
@@ -38,15 +30,13 @@ function App() {
       })
     );
   };
-  const editCardProducts = (productObject, amount) => {
+  const editCartProduct = (productObject, amount) => {
     if (amount === 0) {
       deleteProduct(productObject);
     }
-    if (!cartProducts.includes(productObject)) {
+    if (!cartProducts.some((product) => product.id === productObject.id)) {
       addProduct(productObject);
-    }
-
-    if (cartProducts.includes(productObject)) {
+    } else {
       changeProductAmount(productObject, amount);
     }
   };
@@ -60,7 +50,15 @@ function App() {
       <Header cartAmount={getAmountTotal()} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/shop"
+          element={
+            <Shop
+              editCartProduct={editCartProduct}
+              cartProducts={cartProducts}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </Router>

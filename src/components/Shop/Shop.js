@@ -4,12 +4,18 @@ import allProducts from "../../data/allProducts";
 import ProductCard from "./ProductCard";
 import { useState } from "react";
 import { keyframes } from "styled-components";
-const Shop = () => {
+const Shop = ({ editCartProduct, cartProducts }) => {
   const [products, setProducts] = useState(allProducts);
   const [category, setCategory] = useState("All Products");
   const getProducts = () => {
-    return products.map(({ name, price, imgSrc, id }) => (
-      <ProductCard name={name} price={price} imgSrc={imgSrc} key={id} id={id} />
+    return products.map((product) => (
+      <ProductCard
+        product={product}
+        key={product.id}
+        id={product.id}
+        editCartProduct={editCartProduct}
+        cartProducts={cartProducts}
+      />
     ));
   };
   const changeCategory = (categoryName, products) => {

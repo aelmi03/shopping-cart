@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
-const ProductCard = ({ name, price, imgSrc, id }) => {
+const ProductCard = ({ product, editCartProduct, id, cartProducts }) => {
+  const { name, price, imgSrc } = product;
   const navigate = useNavigate();
   return (
     <ProductWrapper onClick={() => navigate(`/shop/${id}`, { replace: true })}>
@@ -11,7 +12,15 @@ const ProductCard = ({ name, price, imgSrc, id }) => {
       <StyledHR></StyledHR>
       <NameWrapper>{name}</NameWrapper>
       <PriceWrapper>${price}</PriceWrapper>
-      <ButtonWrapper>
+      <ButtonWrapper
+        onClick={(e) => {
+          e.stopPropagation();
+          editCartProduct(
+            product,
+            cartProducts.find((product) => product.id === id)?.amount + 1 || 1
+          );
+        }}
+      >
         Add To Cart <FaShoppingCart />
       </ButtonWrapper>
     </ProductWrapper>
