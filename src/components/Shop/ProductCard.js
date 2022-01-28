@@ -22,7 +22,7 @@ const ProductWrapper = styled.div`
   padding: 2.5rem;
   width: 30rem;
   gap: 2rem;
-  height: 55rem;
+  height: 60rem;
   align-items: center;
   justify-content: space-between;
   text-align: center;
@@ -38,7 +38,7 @@ const ImgWrapper = styled.img`
 
 const NameWrapper = styled.h4`
   font-family: "Poppins", sans-serif;
-  font-size: 1.83rem;
+  font-size: 2rem;
   flex-grow: 1;
   color: ${({ theme }) => theme.colors.secondaryText};
 `;
@@ -74,7 +74,7 @@ const ButtonWrapper = styled.button`
 `;
 
 const StyledHR = styled.hr`
-  border: 2px solid ${({ theme }) => theme.colors.secondaryText};
+  border: 1px solid ${({ theme }) => theme.colors.secondaryText};
   width: 100%;
 `;
 

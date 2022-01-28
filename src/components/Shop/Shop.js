@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ShopSideBar from "./ShopSideBar";
 import allProducts from "../../data/allProducts";
 import ProductCard from "./ProductCard";
-
+import { keyframes } from "styled-components";
 const Shop = () => {
   return (
     <ShopWrapper>
@@ -19,12 +19,18 @@ const Shop = () => {
     </ShopWrapper>
   );
 };
-
+const appearingAnimation = keyframes`
+ 0% { opacity:0 }
+ 100% {opacity:1 }
+`;
 const ShopWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem;
   width: 100%;
+  animation-name: ${appearingAnimation};
+  animation-duration: 2s;
+  animation-iteration-count: 1;
   padding: 4rem;
   align-items: center;
   flex-grow: 1;
@@ -43,6 +49,9 @@ const CardsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
+  animation-name: ${appearingAnimation};
+  animation-duration: 2.8s;
+  animation-iteration-count: 1;
 `;
 
 export default Shop;
