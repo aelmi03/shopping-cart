@@ -27,7 +27,7 @@ const FooterWrapper = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: ${({ theme }) => theme.colors.primaryText};
   }
 `;
 

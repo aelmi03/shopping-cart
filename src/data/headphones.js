@@ -67,7 +67,7 @@ const headphones = [
   },
   {
     id: uniqid(),
-    name: "Jabra Elite 85h Over-Ear Noise Cancelling Bluetooth Headphones - Black - Only at Best Buy",
+    name: "Jabra Elite 85h Over-Ear Noise Cancelling Bluetooth Headphones - Black ",
     price: 349.99,
     description:
       "Jabra Elite 85h feature SmartSound technology, which automatically adapts to your surroundings, either turning on Smart Active Noise Cancellation (ANC) or enabling HearThrough. Personalize settings with the Jabra Sound+ app, customize music equalizer, and get 36 hours (with ANC on) or 41 hours (ANC off) of battery, as well as one-touch access to Amazon Alexa, Siri, and Google Assistant.",

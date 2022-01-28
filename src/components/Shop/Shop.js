@@ -8,8 +8,8 @@ const Shop = () => {
   const [products, setProducts] = useState(allProducts);
   const [category, setCategory] = useState("All Products");
   const getProducts = () => {
-    return products.map(({ name, price, imgSrc }) => (
-      <ProductCard name={name} price={price} imgSrc={imgSrc} />
+    return products.map(({ name, price, imgSrc, id }) => (
+      <ProductCard name={name} price={price} imgSrc={imgSrc} key={id} id={id} />
     ));
   };
   const changeCategory = (categoryName, products) => {

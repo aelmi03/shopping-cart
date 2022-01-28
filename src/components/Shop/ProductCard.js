@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
-const ProductCard = ({ name, price, imgSrc }) => {
+const ProductCard = ({ name, price, imgSrc, id }) => {
+  const navigate = useNavigate();
   return (
-    <ProductWrapper>
+    <ProductWrapper onClick={() => navigate(`/shop/${id}`, { replace: true })}>
       <ImgWrapper src={imgSrc}></ImgWrapper>
       <StyledHR></StyledHR>
       <NameWrapper>{name}</NameWrapper>
@@ -28,6 +30,7 @@ const ProductWrapper = styled.div`
   text-align: center;
   background-color: ${({ theme }) => theme.colors.primaryText};
   border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 35%) 3px 3px 12px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -46,12 +49,10 @@ const ImgWrapper = styled.img`
 `;
 
 const NameWrapper = styled.h4`
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
-  flex-grow: 1;
   color: ${({ theme }) => theme.colors.secondaryText};
   @media (min-width: 768px) {
-    flex-grow: 0;
   }
 `;
 
@@ -70,7 +71,7 @@ const ButtonWrapper = styled.button`
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
-  padding: 1.4rem 3rem;
+  padding: 1.4rem 4rem;
   background-color: ${({ theme }) => theme.colors.secondaryText};
   color: ${({ theme }) => theme.colors.primaryText};
   font-weight: bold;
