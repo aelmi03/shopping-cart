@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header.js";
-import Home from "./components/Home/Home.js";
+import Header from "./components/Header";
+import Home from "./components/Home/";
 import Footer from "./components/Footer.js";
 import Shop from "./components/Shop/Shop.js";
+import ProductDisplay from "./components/ProductDisplay";
 import { useState } from "react";
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
             />
           }
         />
+        <Route path="/shop/:id" element={<ProductDisplay />} />
       </Routes>
       <Footer />
     </Router>
