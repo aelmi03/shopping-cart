@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 
-const Header = (props) => {
+const Header = ({ allProducts }) => {
+  console.log(allProducts);
   return (
     <HeaderWrapper>
       <StyledHeading>Cartmax</StyledHeading>
