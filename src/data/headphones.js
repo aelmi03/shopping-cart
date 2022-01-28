@@ -63,7 +63,7 @@ const headphones = [
     price: 399.99,
     description:
       "Enjoy a premium listening experience and complete wireless freedom with the Beats Studio3 over-ear headphones. Pure Adaptive Noise Canceling (Pure ANC) actively blocks unwanted external noise, while real-time audio calibration preserves the clarity, range, and emotion in your favourite music. These headphones are truly a one of a kind experience, and are undoubtedly the best headphones on the market",
-    imgSrc: "",
+    imgSrc: "https://m.media-amazon.com/images/I/61akJzywmPL._AC_SL1500_.jpg",
   },
   {
     id: uniqid(),

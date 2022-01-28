@@ -75,7 +75,7 @@ const computers = [
   },
   {
     id: uniqid(),
-    name: "CLX Set w/Intel Core i9 10980XE Processor, 64GB DDR4 Memory, GeForce RTX 3090 Graphics, 1 TB SSD, 6 TB HDD, WiFi, Windows 10 Home 64-bit,Black ",
+    name: "CLX Set w/Intel Core i9 10980XE Processor, 64GB DDR4 Memory, GeForce RTX 3090 Graphics, 1 TB SSD, 6 TB HDD",
     price: 6559.99,
     description:
       "A true gaming system, this CLX SET delivers outstanding computing power and visual performance! It's driven by a Liquid-Cooled 10th Gen 18-Core/36-Thread Intel Core i9 10980XE 3GHz processor (Max. Turbo Speed of 4.6GHz) and 64GB of Quad-Channel RGB DDR4-3200 memory. The 24GB GeForce RTX 3090 video card delivers eye-stunning graphics. Meanwhile, the 1TB Solid State Drive and 6TB Hard Drive provide a perfect blend of speed and storage. And it isn't just the insides that look great; the CLX SET is housed in a sleek Mid-Tower gaming chassis, designed for maximum expandability and airflow. With both wired and wireless networking capabilities, you can game how you want, where you want. We even pre-install Windows 10 Home, and include a FREE Wired 7 Color Gaming Keyboard and Mouse, so you can be up and playing like a pro on your favorite games in no time!",
