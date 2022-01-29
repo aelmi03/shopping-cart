@@ -5,11 +5,10 @@ import ProductSideBar from "./ProductSidebar";
 import { useParams } from "react-router";
 import ProductDescription from "./ProductDescription";
 
-const ProductDisplay = (props) => {
+const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   const { id } = useParams();
-  const { name, description, price, imgSrc } = allProducts.find(
-    (product) => product.id === id
-  );
+  const product = allProducts.find((product) => product.id === id);
+  const { name, description, price, imgSrc } = product;
   const [amountInCart, setAmountInCart] = useState(0);
 
   const onAdd = () => {
@@ -36,6 +35,10 @@ const ProductDisplay = (props) => {
           onAdd={onAdd}
           onMinus={onMinus}
           onChangeValue={onChangeValue}
+          cartProducts={cartProducts}
+          editCartProduct={editCartProduct}
+          product={product}
+          id={id}
         />
       </ProductContentWrapper>
       <ProductDescription description={description} />

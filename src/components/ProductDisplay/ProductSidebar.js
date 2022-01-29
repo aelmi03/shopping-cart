@@ -10,7 +10,16 @@ const ProductSideBar = ({
   onAdd,
   onMinus,
   onChangeValue,
+  editCartProduct,
+  cartProducts,
+  id,
+  product,
 }) => {
+  const getCorrectAmount = () => {
+    let number = cartProducts.find((product) => product.id === id)?.amount || 0;
+    console.log(number);
+    return number + amountInCart;
+  };
   return (
     <SideBarWrapper>
       <PriceHeading>Price : ${price}</PriceHeading>
@@ -21,7 +30,13 @@ const ProductSideBar = ({
         onChangeValue={onChangeValue}
       />
       <ButtonsContainer>
-        <GreenButton>
+        <GreenButton
+          onClick={(e) => {
+            e.stopPropagation();
+            if (amountInCart === 0) return;
+            editCartProduct(product, getCorrectAmount());
+          }}
+        >
           Add To Cart <FaShoppingCart />
         </GreenButton>
         <WhiteButton>

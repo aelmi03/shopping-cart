@@ -14,8 +14,8 @@ function App() {
       cartProducts.filter((product) => product.id !== productObject.id)
     );
   };
-  const addProduct = (productObject) => {
-    setCartProducts([...cartProducts, { ...productObject, amount: 1 }]);
+  const addProduct = (productObject, amount) => {
+    setCartProducts([...cartProducts, { ...productObject, amount }]);
   };
 
   const changeProductAmount = (productObject, amount) => {
@@ -36,7 +36,7 @@ function App() {
       deleteProduct(productObject);
     }
     if (!cartProducts.some((product) => product.id === productObject.id)) {
-      addProduct(productObject);
+      addProduct(productObject, amount);
     } else {
       changeProductAmount(productObject, amount);
     }
@@ -60,7 +60,15 @@ function App() {
             />
           }
         />
-        <Route path="/shop/:id" element={<ProductDisplay />} />
+        <Route
+          path="/shop/:id"
+          element={
+            <ProductDisplay
+              editCartProduct={editCartProduct}
+              cartProducts={cartProducts}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </Router>

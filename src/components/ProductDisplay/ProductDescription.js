@@ -17,6 +17,9 @@ const DescriptionWrapper = styled.div`
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
+  @media (min-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const DescriptionTitle = styled.h2`
@@ -30,7 +33,7 @@ const DescriptionTitle = styled.h2`
 
 const DescriptionHR = styled.hr`
   border: 1px solid ${({ theme }) => theme.colors.secondaryText};
-  width: 97vw;
+  width: 100%;
 `;
 
 const DescriptionContent = styled.p`
