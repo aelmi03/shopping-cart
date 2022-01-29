@@ -4,11 +4,22 @@ import Button from "../Utils/Button";
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
 import AmountPicker from "../Utils/AmountPicker";
 
-const ProductSideBar = ({ price }) => {
+const ProductSideBar = ({
+  price,
+  amountInCart,
+  onAdd,
+  onMinus,
+  onChangeValue,
+}) => {
   return (
     <SideBarWrapper>
       <PriceHeading>Price : ${price}</PriceHeading>
-      <AmountPicker />
+      <AmountPicker
+        value={amountInCart}
+        onAdd={onAdd}
+        onMinus={onMinus}
+        onChangeValue={onChangeValue}
+      />
       <ButtonsContainer>
         <GreenButton>
           Add To Cart <FaShoppingCart />

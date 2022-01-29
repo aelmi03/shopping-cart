@@ -22,7 +22,7 @@ const DescriptionWrapper = styled.div`
 const DescriptionTitle = styled.h2`
   font-size: 2.9rem;
   font-weight: bold;
-  font-family: Inconsolata;
+  font-family: "Montserrat";
   @media (min-width: 768px) {
     font-size: 3.2rem;
   }
@@ -35,7 +35,7 @@ const DescriptionHR = styled.hr`
 
 const DescriptionContent = styled.p`
   font-size: 2.2rem;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Poppins";
   @media (min-width: 768px) {
     font-size: 2.5rem;
   }

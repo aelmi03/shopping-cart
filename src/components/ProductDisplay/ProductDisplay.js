@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import allProducts from "../../data/allProducts";
 import ProductSideBar from "./ProductSidebar";
@@ -10,12 +10,33 @@ const ProductDisplay = (props) => {
   const { name, description, price, imgSrc } = allProducts.find(
     (product) => product.id === id
   );
+  const [amountInCart, setAmountInCart] = useState(0);
+
+  const onAdd = () => {
+    if (amountInCart >= 99) return;
+    setAmountInCart((prevValue) => prevValue + 1);
+  };
+  const onMinus = () => {
+    if (amountInCart === 0) return;
+    setAmountInCart((prevValue) => prevValue - 1);
+  };
+
+  const onChangeValue = (newValue) => {
+    console.log(newValue);
+    setAmountInCart(newValue);
+  };
   return (
     <ProductDisplayWrapper>
       <ProductHeader>{name}</ProductHeader>
       <ProductContentWrapper>
         <ProductImage src={imgSrc} />
-        <ProductSideBar price={price} />
+        <ProductSideBar
+          price={price}
+          amountInCart={amountInCart}
+          onAdd={onAdd}
+          onMinus={onMinus}
+          onChangeValue={onChangeValue}
+        />
       </ProductContentWrapper>
       <ProductDescription description={description} />
     </ProductDisplayWrapper>

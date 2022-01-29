@@ -1,12 +1,22 @@
 import { FaPlus, FaMinus } from "react-icons/fa";
 import styled from "styled-components";
 
-const AmountPicker = (props) => {
+const AmountPicker = ({ value, onAdd, onMinus, onChangeValue }) => {
+  console.log(value);
   return (
     <AmountPickerWrapper>
-      <FaMinus style={{ cursor: "pointer" }} />
-      <AmountInput value={0} max={999} min={0} />
-      <FaPlus style={{ cursor: "pointer" }} />
+      <FaMinus onClick={onMinus} style={{ cursor: "pointer" }} />
+      <AmountInput
+        value={parseInt(value, 10)}
+        maxLength={2}
+        minLength={0}
+        type="tel"
+        onChange={(e) => {
+          if (+e.target.value > 99) return;
+          onChangeValue(parseInt(e.target.value, 10) || 0);
+        }}
+      />
+      <FaPlus onClick={onAdd} style={{ cursor: "pointer" }} />
     </AmountPickerWrapper>
   );
 };
