@@ -19,8 +19,11 @@ const Button = styled.button`
   &:hover {
     transform: scale(1.1);
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 540px) {
     font-size: 2rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2.3rem;
   }
 `;
 

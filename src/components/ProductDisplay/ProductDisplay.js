@@ -3,6 +3,7 @@ import styled from "styled-components";
 import allProducts from "../../data/allProducts";
 import ProductSideBar from "./ProductSidebar";
 import { useParams } from "react-router";
+import ProductDescription from "./ProductDescription";
 
 const ProductDisplay = (props) => {
   const { id } = useParams();
@@ -16,6 +17,7 @@ const ProductDisplay = (props) => {
         <ProductImage src={imgSrc} />
         <ProductSideBar />
       </ProductContentWrapper>
+      <ProductDescription description={description} />
     </ProductDisplayWrapper>
   );
 };
