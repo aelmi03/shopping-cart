@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router";
+import Button from "../Utils/Button";
 
 const ProductCard = ({ product, editCartProduct, id, cartProducts }) => {
   const { name, price, imgSrc } = product;
@@ -12,7 +13,7 @@ const ProductCard = ({ product, editCartProduct, id, cartProducts }) => {
       <StyledHR></StyledHR>
       <NameWrapper>{name}</NameWrapper>
       <PriceWrapper>${price}</PriceWrapper>
-      <ButtonWrapper
+      <Button
         onClick={(e) => {
           e.stopPropagation();
           editCartProduct(
@@ -22,7 +23,7 @@ const ProductCard = ({ product, editCartProduct, id, cartProducts }) => {
         }}
       >
         Add To Cart <FaShoppingCart />
-      </ButtonWrapper>
+      </Button>
     </ProductWrapper>
   );
 };
@@ -66,35 +67,11 @@ const NameWrapper = styled.h4`
 `;
 
 const PriceWrapper = styled.h4`
-  font-size: 2.4rem;
-  font-family: "Montserrat", sans-serif;
+  font-size: 2.7rem;
+  font-family: "Roboto", sans-serif;
   color: ${({ theme }) => theme.colors.secondaryText};
   @media (min-width: 768px) {
-    font-size: 2.7rem;
-  }
-`;
-
-export const ButtonWrapper = styled.button`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.4rem;
-  padding: 1.4rem 4rem;
-  background-color: ${({ theme }) => theme.colors.secondaryText};
-  color: ${({ theme }) => theme.colors.primaryText};
-  font-weight: bold;
-  font-family: "Poppins", sans-serif;
-  border-radius: 50px;
-  font-size: 1.8rem;
-  transition: all 0.3s ease-in-out;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-  &:hover {
-    transform: scale(1.1);
-  }
-  @media (min-width: 1024px) {
-    font-size: 2rem;
+    font-size: 2.9rem;
   }
 `;
 

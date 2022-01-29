@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import homeImage from "../../assets/home-image.jpeg";
-
+import Button from "../Utils/Button";
 const Home = (props) => {
   return (
     <HomeWrapper>
@@ -9,7 +9,7 @@ const Home = (props) => {
         <HomeHeader>
           Get these limited time deals before they sell out!
         </HomeHeader>
-        <HomeButton>Shop Now</HomeButton>
+        <Button>Shop Now</Button>
       </ContentWrapper>
       <HomeImage src={homeImage}></HomeImage>
     </HomeWrapper>
@@ -75,26 +75,6 @@ const HomeHeader = styled.h2`
   color: ${({ theme }) => theme.colors.secondaryText};
   @media (min-width: 1024px) {
     font-size: 5rem;
-  }
-`;
-
-const HomeButton = styled.button`
-  padding: 2rem 8rem;
-  background-color: ${({ theme }) => theme.colors.secondaryText};
-  color: ${({ theme }) => theme.colors.primaryText};
-  font-weight: bold;
-  font-family: "Poppins", sans-serif;
-  border-radius: 50px;
-  font-size: 2.7rem;
-  transition: all 0.3s ease-in-out;
-  animation-name: ${breatheAnimation};
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-  &:hover {
-    transform: scale(1.1);
-  }
-  @media (min-width: 1024px) {
-    font-size: 3.2rem;
   }
 `;
 

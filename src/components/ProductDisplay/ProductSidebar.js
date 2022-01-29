@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonWrapper } from "../Shop/ProductCard";
+import Button from "../Utils/Button";
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
 
 const ProductSideBar = (props) => {
@@ -8,12 +8,12 @@ const ProductSideBar = (props) => {
     <SideBarWrapper>
       <PriceHeading>Price : $1999.99</PriceHeading>
       <ButtonsContainer>
-        <ButtonWrapper>
+        <Button>
           Add To Cart <FaShoppingCart />
-        </ButtonWrapper>
-        <ButtonWrapper>
+        </Button>
+        <Button>
           Go To Checkout <FaShoppingBag />
-        </ButtonWrapper>
+        </Button>
       </ButtonsContainer>
     </SideBarWrapper>
   );
@@ -23,17 +23,17 @@ const SideBarWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
-  height: 50rem;
+  height: 40rem;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.lightGray};
   border-radius: 10px;
-  padding: 4rem;
+  border: 1px solid black;
+  padding: 3rem;
 `;
 
 const PriceHeading = styled.h2`
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 2.9rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
   color: ${({ theme }) => theme.colors.secondaryText};
   text-align: center;
 `;
