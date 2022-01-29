@@ -22,7 +22,10 @@ const DescriptionWrapper = styled.div`
 const DescriptionTitle = styled.h2`
   font-size: 2.9rem;
   font-weight: bold;
-  font-family: monotone;
+  font-family: Inconsolata;
+  @media (min-width: 768px) {
+    font-size: 3.2rem;
+  }
 `;
 
 const DescriptionHR = styled.hr`
@@ -31,9 +34,11 @@ const DescriptionHR = styled.hr`
 `;
 
 const DescriptionContent = styled.p`
-  font-size: 1.9rem;
-  font-family: sans-serif;
-  text-align: Center;
+  font-size: 2.2rem;
+  font-family: "Inconsolata", sans-serif;
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export default ProductDescription;

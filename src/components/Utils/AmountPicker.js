@@ -4,9 +4,9 @@ import styled from "styled-components";
 const AmountPicker = (props) => {
   return (
     <AmountPickerWrapper>
-      <FaMinus />
+      <FaMinus style={{ cursor: "pointer" }} />
       <AmountInput value={0} max={999} min={0} />
-      <FaPlus />
+      <FaPlus style={{ cursor: "pointer" }} />
     </AmountPickerWrapper>
   );
 };
@@ -25,6 +25,9 @@ const AmountInput = styled.input`
   font-size: 2.3rem;
   width: 13rem;
   text-align: center;
+  @media (min-width: 1024px) {
+    font-size: 2.8rem;
+  }
 `;
 
 export default AmountPicker;
