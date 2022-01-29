@@ -74,7 +74,7 @@ const PriceWrapper = styled.h4`
   }
 `;
 
-const ButtonWrapper = styled.button`
+export const ButtonWrapper = styled.button`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
