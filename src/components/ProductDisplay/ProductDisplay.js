@@ -5,14 +5,29 @@ import { useParams } from "react-router";
 
 const ProductDisplay = (props) => {
   const { id } = useParams();
-  const product = allProducts.find((product) => product.id === id);
+  const { name, description, price, imgSrc } = allProducts.find(
+    (product) => product.id === id
+  );
   return (
-    <>
-      <h1>{product.name}</h1>
-      <h1>{product.price}</h1>
-      <h1>{product.description}</h1>
-    </>
+    <ProductDisplayWrapper>
+      <ProductHeader>{name}</ProductHeader>
+    </ProductDisplayWrapper>
   );
 };
+
+const ProductDisplayWrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+`;
+
+const ProductHeader = styled.h2`
+  text-align: center;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+`;
 
 export default ProductDisplay;
