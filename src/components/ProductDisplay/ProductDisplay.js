@@ -26,7 +26,8 @@ const ProductDisplayWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2.8rem;
-  padding: 3rem;
+  padding: 2rem 0.5rem;
+  width: 100%;
 `;
 
 const ProductHeader = styled.h2`

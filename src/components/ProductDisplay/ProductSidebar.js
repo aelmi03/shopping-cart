@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Utils/Button";
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
+import AmountPicker from "../Utils/AmountPicker";
 
 const ProductSideBar = (props) => {
   return (
     <SideBarWrapper>
       <PriceHeading>Price : $1999.99</PriceHeading>
+      <AmountPicker />
       <ButtonsContainer>
         <Button>
           Add To Cart <FaShoppingCart />
