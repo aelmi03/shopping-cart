@@ -16,7 +16,8 @@ const CheckoutProductsWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   gap: 2.5rem;
-  height: 50rem;
+  width: 100%;
+  height: 65vh;
   overflow: scroll;
 `;
 export default CheckoutProducts;

@@ -75,7 +75,7 @@ const PriceWrapper = styled.h4`
   }
 `;
 
-const StyledHR = styled.hr`
+export const StyledHR = styled.hr`
   border: 1px solid ${({ theme }) => theme.colors.secondaryText};
   width: 100%;
 `;
