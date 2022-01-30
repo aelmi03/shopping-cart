@@ -3,7 +3,6 @@ import styled from "styled-components";
 import CheckoutProducts from "./CheckoutProducts";
 import CheckoutPrice from "./CheckoutPrice";
 import { FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
-import Button from "../Utils/Button";
 const Checkout = ({ cartProducts }) => {
   return (
     <CheckoutWrapper>
@@ -38,6 +37,9 @@ const CheckoutTitle = styled.h2`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  @media (min-width: 768px) {
+    font-size: 3.9rem;
+  }
 `;
 
 const CheckoutContent = styled.div`
@@ -45,5 +47,8 @@ const CheckoutContent = styled.div`
   flex-flow: column nowrap;
   gap: 4.5rem;
   align-items: center;
+  @media (min-width: 768px) {
+    flex-flow: row nowrap;
+  }
 `;
 export default Checkout;

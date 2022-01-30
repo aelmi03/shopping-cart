@@ -15,12 +15,12 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.primaryDark};
 `;
 const StyledHeading = styled.header`
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
   color: ${({ theme }) => theme.colors.secondary};

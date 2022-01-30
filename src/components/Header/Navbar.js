@@ -35,6 +35,7 @@ const NavbarWrapper = styled.ul`
     position: relative;
     font-weight: 400;
     transition: all 0.3s ease-in-out;
+    font-size: 1.8rem;
     &:hover {
       transform: scale(1.2);
       color: ${({ theme }) => theme.colors.secondaryDark};

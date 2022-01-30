@@ -14,7 +14,10 @@ const CheckoutProductCard = ({ product }) => {
       </TitleWrapper>
       <ImgWrapper src={product.imgSrc} />
       <AmountsWrapper>
-        <AmountPicker value={50} style={{ fontSize: "1.7rem" }} />
+        <AmountPicker
+          value={50}
+          style={{ fontSize: "1.8rem", distance: "1rem" }}
+        />
         <PriceAmount>$1599.99</PriceAmount>
       </AmountsWrapper>
     </CheckoutProductCardWrapper>
@@ -44,8 +47,6 @@ const NameWrapper = styled.h4`
   font-size: 1.7rem;
   width: 80%;
   color: ${({ theme }) => theme.colors.secondaryText};
-  @media (min-width: 768px) {
-  }
 `;
 
 const AmountsWrapper = styled.div`

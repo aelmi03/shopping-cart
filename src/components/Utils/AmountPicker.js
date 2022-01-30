@@ -1,10 +1,10 @@
 import { FaPlus, FaMinus } from "react-icons/fa";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const AmountPicker = ({ value, onAdd, onMinus, onChangeValue, style }) => {
   console.log(value);
   return (
-    <AmountPickerWrapper>
+    <AmountPickerWrapper style={style}>
       <FaMinus onClick={onMinus} style={{ cursor: "pointer" }} />
       <AmountInput
         value={parseInt(value, 10)}
@@ -15,7 +15,6 @@ const AmountPicker = ({ value, onAdd, onMinus, onChangeValue, style }) => {
           if (+e.target.value > 99) return;
           onChangeValue(parseInt(e.target.value, 10) || 0);
         }}
-        style={style}
       />
       <FaPlus onClick={onAdd} style={{ cursor: "pointer" }} />
     </AmountPickerWrapper>
@@ -28,6 +27,15 @@ const AmountPickerWrapper = styled.div`
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
+  ${(props) =>
+    props.style.distance &&
+    css`
+      gap: 0.2rem;
+      > input {
+        width: 9rem;
+        font-size: ${props.style.fontSize};
+      }
+    `};
 `;
 
 const AmountInput = styled.input`
