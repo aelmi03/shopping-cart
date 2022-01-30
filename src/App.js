@@ -4,6 +4,7 @@ import Home from "./components/Home/";
 import Footer from "./components/Footer.js";
 import Shop from "./components/Shop/Shop.js";
 import ProductDisplay from "./components/ProductDisplay";
+import Checkout from "./components/Checkout/Checkout";
 import { useState } from "react";
 
 function App() {
@@ -68,6 +69,10 @@ function App() {
               cartProducts={cartProducts}
             />
           }
+        />
+        <Route
+          path="/checkout"
+          element={<Checkout cartProducts={cartProducts} />}
         />
       </Routes>
       <Footer />

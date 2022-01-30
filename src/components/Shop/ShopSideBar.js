@@ -78,7 +78,6 @@ const ShopCategories = styled.ul`
 const Category = styled.li`
   list-style: none;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
   font-size: 2.4rem;
   transition: all 0.4s ease-in-out;
   position: relative;
