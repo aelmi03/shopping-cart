@@ -1,8 +1,10 @@
 import Button from "../Utils/Button";
 import { FaShoppingBag } from "react-icons/fa";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
 const EmptyCart = () => {
+  const navigate = useNavigate();
   return (
     <EmptyCartWrapper>
       <FaShoppingBag
@@ -16,7 +18,14 @@ const EmptyCart = () => {
           Your shopping cart is empty, please browse through our items in the
           shop.
         </EmptyItemsText>
-        <Button style={{ padding: "2rem 5rem" }}>Browse Products</Button>
+        <Button
+          onClick={() => {
+            navigate("/shop");
+          }}
+          style={{ padding: "2rem 5rem" }}
+        >
+          Browse Products
+        </Button>
       </EmptyContentContainer>
     </EmptyCartWrapper>
   );

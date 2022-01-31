@@ -59,9 +59,6 @@ const CardsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  animation-name: ${appearingAnimation};
-  animation-duration: 2.1s;
-  animation-iteration-count: 1;
 `;
 
 export default Shop;
