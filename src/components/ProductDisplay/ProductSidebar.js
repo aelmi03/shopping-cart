@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Utils/Button";
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import AmountPicker from "../Utils/AmountPicker";
 
 const ProductSideBar = ({
@@ -20,6 +21,7 @@ const ProductSideBar = ({
     console.log(number);
     return number + amountInCart;
   };
+  const navigate = useNavigate();
   return (
     <SideBarWrapper>
       <PriceHeading>Price : ${price}</PriceHeading>
@@ -39,7 +41,11 @@ const ProductSideBar = ({
         >
           Add To Cart <FaShoppingCart />
         </GreenButton>
-        <WhiteButton>
+        <WhiteButton
+          onClick={() => {
+            navigate("/checkout");
+          }}
+        >
           Go To Checkout <FaShoppingBag />
         </WhiteButton>
       </ButtonsContainer>
