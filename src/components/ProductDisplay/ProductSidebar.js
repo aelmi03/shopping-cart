@@ -112,7 +112,7 @@ const SideBarWrapper = styled.div`
 `;
 
 const PriceHeading = styled.h2`
-  font-family: "Roboto", sans-serif;
+  font-family: "Inconsolata", sans-serif;
   font-size: 2.5rem;
   color: ${({ theme }) => theme.colors.secondaryText};
   text-align: center;

@@ -8,7 +8,8 @@ const Theme = {
     secondaryDark: "#32cb00",
     primaryText: "#FFFFFF",
     secondaryText: "#000000",
-    lightGray: "#dadada",
+    lightGray: "#eeeeee",
+
     neutral: "rgb(123, 123, 123)",
   },
 };

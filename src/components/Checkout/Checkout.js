@@ -2,20 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import CheckoutProducts from "./CheckoutProducts";
 import CheckoutPrice from "./CheckoutPrice";
-import { FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
+import EmptyCart from "./EmptyCart";
+
 const Checkout = ({ cartProducts, editCartProduct, totalValue }) => {
   return (
     <CheckoutWrapper>
-      <CheckoutTitle>
-        Your Shopping Bag <FaShoppingBag />
-      </CheckoutTitle>
-      <CheckoutContent>
-        <CheckoutProducts
-          cartProducts={cartProducts}
-          editCartProduct={editCartProduct}
-        />
-        <CheckoutPrice totalValue={totalValue} />
-      </CheckoutContent>
+      <CheckoutTitle>Your Shopping Bag</CheckoutTitle>
+      {cartProducts.length !== 0 ? (
+        <React.Fragment>
+          <CheckoutContent>
+            <CheckoutProducts
+              cartProducts={cartProducts}
+              editCartProduct={editCartProduct}
+            />
+            <CheckoutPrice totalValue={totalValue} />
+          </CheckoutContent>
+        </React.Fragment>
+      ) : (
+        <EmptyCart />
+      )}
     </CheckoutWrapper>
   );
 };
@@ -25,7 +30,7 @@ const CheckoutWrapper = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 4.5rem;
   flex-grow: 1;
   padding: 2rem;
@@ -33,6 +38,7 @@ const CheckoutWrapper = styled.div`
 
 const CheckoutTitle = styled.h2`
   font-size: 3.2rem;
+  margin-bottom: 6rem;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
@@ -41,7 +47,7 @@ const CheckoutTitle = styled.h2`
   align-items: center;
   gap: 1.5rem;
   @media (min-width: 768px) {
-    font-size: 3.9rem;
+    font-size: 3.4rem;
   }
 `;
 
@@ -54,4 +60,5 @@ const CheckoutContent = styled.div`
     flex-flow: row nowrap;
   }
 `;
+
 export default Checkout;
