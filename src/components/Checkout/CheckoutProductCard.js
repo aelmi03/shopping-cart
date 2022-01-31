@@ -4,21 +4,22 @@ import AmountPicker from "../Utils/AmountPicker";
 import { FaRegWindowClose } from "react-icons/fa";
 
 const CheckoutProductCard = ({ product }) => {
+  const { imgSrc, amount, name, price } = product;
   return (
     <CheckoutProductCardWrapper>
       <TitleWrapper>
-        <NameWrapper>{product.name}</NameWrapper>
+        <NameWrapper>{name}</NameWrapper>
         <FaRegWindowClose
           style={{ width: "30px", height: "30px", cursor: "pointer" }}
         />
       </TitleWrapper>
-      <ImgWrapper src={product.imgSrc} />
+      <ImgWrapper src={imgSrc} />
       <AmountsWrapper>
         <AmountPicker
-          value={50}
+          value={amount}
           style={{ fontSize: "1.8rem", distance: "1rem" }}
         />
-        <PriceAmount>$1599.99</PriceAmount>
+        <PriceAmount>{`$${price}`}</PriceAmount>
       </AmountsWrapper>
     </CheckoutProductCardWrapper>
   );

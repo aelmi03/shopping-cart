@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import StyledLink from "./StyledLink";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -10,8 +10,8 @@ const Navbar = ({ cartAmount }) => {
       <StyledLink to="/">Home</StyledLink>
       <StyledLink to="/shop">Shop</StyledLink>
       <StyledLink to="/checkout">
-        <IconWrapper className="icon-wrapper">
-          <FaShoppingCart />
+        <IconWrapper className="icon-wrapper" hasItems={cartAmount > 0}>
+          <FaShoppingCart style={{ minWidth: "20px", minHeight: "20px" }} />
           {cartAmount > 0 && (
             <CartNumberWrapper>{cartAmount}</CartNumberWrapper>
           )}
@@ -64,7 +64,7 @@ const NavbarWrapper = styled.ul`
 const CartNumberWrapper = styled.div`
   font-size: 1.4rem;
   display: flex;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.1rem;
   justify-content: center;
   background-color: #ffffff;
   clip-path: polygon(
@@ -84,15 +84,23 @@ const CartNumberWrapper = styled.div`
 `;
 const IconWrapper = styled.div`
   position: relative;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 6rem;
+  height: 6rem;
   display: flex;
   font-size: 2.6rem;
-  padding: 1rem;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.primaryLight};
   align-items: center;
   clip-path: circle(50% at 50% 50%);
   z-index: 1;
+  ${(props) =>
+    props.hasItems &&
+    css`
+      width: 8rem;
+      height: 7.5rem;
+      > svg {
+        margin-top: 1rem;
+      }
+    `}
 `;
 export default Navbar;

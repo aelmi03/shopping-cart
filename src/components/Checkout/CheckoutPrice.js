@@ -50,8 +50,9 @@ const CheckoutPriceWrapper = styled.div`
     padding: 3.5rem;
   }
   @media (min-width: 1024px) {
-    min-width: 47rem;
-    padding: 3.5rem;
+    min-width: 50rem;
+    height: 30rem;
+    padding: 3rem;
   }
 `;
 

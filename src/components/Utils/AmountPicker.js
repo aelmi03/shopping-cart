@@ -27,13 +27,13 @@ const AmountPickerWrapper = styled.div`
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
-  ${(props) =>
-    props.style.distance &&
+  ${({ style }) =>
+    style?.distance &&
     css`
       gap: 0.2rem;
       > input {
         width: 9rem;
-        font-size: ${props.style.fontSize};
+        font-size: ${style.fontSize};
       }
     `};
 `;
