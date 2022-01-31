@@ -4,12 +4,14 @@ import styled from "styled-components";
 import { StyledHR } from "../Shop/ProductCard";
 import Button from "../Utils/Button";
 
-const CheckoutPrice = (props) => {
+const CheckoutPrice = ({ totalValue }) => {
   return (
     <CheckoutPriceWrapper>
       <CheckoutContainer>
         <BoldText>SUBTOTAL:</BoldText>
-        <PriceText>$1000.99 USD</PriceText>
+        <PriceText>
+          ${Number(totalValue.toFixed(2)).toLocaleString()}{" "}
+        </PriceText>
       </CheckoutContainer>
       <CheckoutContainer>
         <BoldText>SHIPPING:</BoldText>
@@ -20,7 +22,9 @@ const CheckoutPrice = (props) => {
         <PriceText>$0.00</PriceText>
       </CheckoutContainer>
       <StyledHR style={{ marginTop: "1rem" }} />
-      <TotalPriceText>Total : $1000.99 USD</TotalPriceText>
+      <TotalPriceText>
+        Total : ${Number(totalValue.toFixed(2)).toLocaleString()}
+      </TotalPriceText>
       <Button
         style={{
           padding: "1rem 3rem",

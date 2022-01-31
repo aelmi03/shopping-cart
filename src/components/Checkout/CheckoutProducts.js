@@ -2,11 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import CheckoutProductCard from "./CheckoutProductCard";
 
-const CheckoutProducts = ({ cartProducts }) => {
+const CheckoutProducts = ({ cartProducts, editCartProduct }) => {
   return (
     <CheckoutProductsWrapper>
       {cartProducts.map((product) => (
-        <CheckoutProductCard product={product} key={product.id} />
+        <CheckoutProductCard
+          product={product}
+          key={product.id}
+          editCartProduct={editCartProduct}
+        />
       ))}
     </CheckoutProductsWrapper>
   );

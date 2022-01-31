@@ -3,15 +3,18 @@ import styled from "styled-components";
 import CheckoutProducts from "./CheckoutProducts";
 import CheckoutPrice from "./CheckoutPrice";
 import { FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
-const Checkout = ({ cartProducts }) => {
+const Checkout = ({ cartProducts, editCartProduct, totalValue }) => {
   return (
     <CheckoutWrapper>
       <CheckoutTitle>
         Your Shopping Bag <FaShoppingBag />
       </CheckoutTitle>
       <CheckoutContent>
-        <CheckoutProducts cartProducts={cartProducts} />
-        <CheckoutPrice />
+        <CheckoutProducts
+          cartProducts={cartProducts}
+          editCartProduct={editCartProduct}
+        />
+        <CheckoutPrice totalValue={totalValue} />
       </CheckoutContent>
     </CheckoutWrapper>
   );

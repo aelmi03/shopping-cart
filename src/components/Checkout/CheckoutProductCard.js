@@ -3,7 +3,7 @@ import styled from "styled-components";
 import AmountPicker from "../Utils/AmountPicker";
 import { FaRegWindowClose } from "react-icons/fa";
 
-const CheckoutProductCard = ({ product }) => {
+const CheckoutProductCard = ({ product, editCartProduct }) => {
   const { imgSrc, amount, name, price } = product;
   return (
     <CheckoutProductCardWrapper>
@@ -11,6 +11,7 @@ const CheckoutProductCard = ({ product }) => {
         <NameWrapper>{name}</NameWrapper>
         <FaRegWindowClose
           style={{ width: "30px", height: "30px", cursor: "pointer" }}
+          onClick={() => editCartProduct(product, 0)}
         />
       </TitleWrapper>
       <ImgWrapper src={imgSrc} />
@@ -18,6 +19,9 @@ const CheckoutProductCard = ({ product }) => {
         <AmountPicker
           value={amount}
           style={{ fontSize: "1.8rem", distance: "1rem" }}
+          onAdd={editCartProduct.bind(this, product, product.amount + 1)}
+          onMinus={editCartProduct.bind(this, product, product.amount - 1)}
+          onChangeValue={(newAmount) => editCartProduct(product, newAmount)}
         />
         <PriceAmount>{`$${price}`}</PriceAmount>
       </AmountsWrapper>

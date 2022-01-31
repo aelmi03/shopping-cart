@@ -8,12 +8,15 @@ import Checkout from "./components/Checkout/Checkout";
 import { useState } from "react";
 
 function App() {
-  const [cartProducts, setCartProducts] = useState([]);
+  let [cartProducts, setCartProducts] = useState([]);
   console.log(cartProducts);
   const deleteProduct = (productObject) => {
-    setCartProducts(
-      cartProducts.filter((product) => product.id !== productObject.id)
-    );
+    console.log("DELETING PRODUCT!!! " + productObject.name);
+
+    setCartProducts((prevProducts) => {
+      return prevProducts.filter((product) => product.id !== productObject.id);
+    });
+    console.log("WE LITT");
   };
   const addProduct = (productObject, amount) => {
     setCartProducts([...cartProducts, { ...productObject, amount }]);
@@ -32,11 +35,13 @@ function App() {
       })
     );
   };
+
   const editCartProduct = (productObject, amount) => {
     if (amount === 0) {
       deleteProduct(productObject);
-    }
-    if (!cartProducts.some((product) => product.id === productObject.id)) {
+    } else if (
+      !cartProducts.some((product) => product.id === productObject.id)
+    ) {
       addProduct(productObject, amount);
     } else {
       changeProductAmount(productObject, amount);
@@ -45,6 +50,12 @@ function App() {
   const getAmountTotal = () => {
     return cartProducts.reduce((currentValue, prevProduct) => {
       return prevProduct.amount + currentValue;
+    }, 0);
+  };
+
+  const getTotalValue = () => {
+    return cartProducts.reduce((currentValue, prevProduct) => {
+      return prevProduct.amount * prevProduct.price + currentValue;
     }, 0);
   };
   return (
@@ -72,7 +83,13 @@ function App() {
         />
         <Route
           path="/checkout"
-          element={<Checkout cartProducts={cartProducts} />}
+          element={
+            <Checkout
+              cartProducts={cartProducts}
+              editCartProduct={editCartProduct}
+              totalValue={getTotalValue()}
+            />
+          }
         />
       </Routes>
       <Footer />

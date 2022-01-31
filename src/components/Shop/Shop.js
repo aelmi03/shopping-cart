@@ -60,7 +60,7 @@ const CardsWrapper = styled.div`
   align-items: center;
   align-content: center;
   animation-name: ${appearingAnimation};
-  animation-duration: 2.8s;
+  animation-duration: 2.1s;
   animation-iteration-count: 1;
 `;
 
