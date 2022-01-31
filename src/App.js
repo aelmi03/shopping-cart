@@ -21,7 +21,9 @@ function App() {
   const addProduct = (productObject, amount) => {
     setCartProducts([...cartProducts, { ...productObject, amount }]);
   };
-
+  const resetCart = () => {
+    setCartProducts([]);
+  };
   const changeProductAmount = (productObject, amount) => {
     setCartProducts(
       cartProducts.map((product) => {
@@ -88,6 +90,7 @@ function App() {
               cartProducts={cartProducts}
               editCartProduct={editCartProduct}
               totalValue={getTotalValue()}
+              resetCart={resetCart}
             />
           }
         />

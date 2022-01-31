@@ -3,8 +3,10 @@ import { FaMoneyCheck } from "react-icons/fa";
 import styled from "styled-components";
 import { StyledHR } from "../Shop/ProductCard";
 import Button from "../Utils/Button";
+import { useNavigate } from "react-router";
 
-const CheckoutPrice = ({ totalValue }) => {
+const CheckoutPrice = ({ totalValue, resetCart }) => {
+  const navigate = useNavigate();
   return (
     <CheckoutPriceWrapper>
       <CheckoutContainer>
@@ -31,6 +33,11 @@ const CheckoutPrice = ({ totalValue }) => {
           fontSize: "2rem",
           width: "26rem",
           marginTop: "1rem",
+        }}
+        onClick={() => {
+          resetCart();
+          navigate("/");
+          alert("Thank you so much for shopping with us!"); // display string message
         }}
       >
         Checkout <FaMoneyCheck />

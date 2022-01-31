@@ -4,7 +4,7 @@ import CheckoutProducts from "./CheckoutProducts";
 import CheckoutPrice from "./CheckoutPrice";
 import EmptyCart from "./EmptyCart";
 
-const Checkout = ({ cartProducts, editCartProduct, totalValue }) => {
+const Checkout = ({ cartProducts, editCartProduct, totalValue, resetCart }) => {
   return (
     <CheckoutWrapper>
       <CheckoutTitle>Your Shopping Bag</CheckoutTitle>
@@ -15,7 +15,7 @@ const Checkout = ({ cartProducts, editCartProduct, totalValue }) => {
               cartProducts={cartProducts}
               editCartProduct={editCartProduct}
             />
-            <CheckoutPrice totalValue={totalValue} />
+            <CheckoutPrice totalValue={totalValue} resetCart={resetCart} />
           </CheckoutContent>
         </React.Fragment>
       ) : (
