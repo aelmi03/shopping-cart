@@ -44,6 +44,9 @@ const HomeWrapper = styled.div`
     flex-flow: row nowrap;
     justify-content: center;
   }
+  @media (max-width: 767px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const ContentWrapper = styled.div`

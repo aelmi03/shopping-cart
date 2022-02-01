@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import styled from "styled-components";
-
+import StyledInput from "./Utils/StyledInput";
 const Footer = (props) => {
   const removeDefault = (e) => {
     e.preventDefault();
@@ -38,6 +38,13 @@ const Footer = (props) => {
             Promotions
           </FooterLink>
         </LinksSection>
+        <EmailSection>
+          <FooterTitle style={{ fontWeight: "400", fontFamily: "Poppins" }}>
+            Join Us
+          </FooterTitle>
+          <EmailText>Sign up now for the latest updates and deals!</EmailText>
+          <StyledInput placeholder={"Email Address"} />
+        </EmailSection>
       </FooterContent>
       <GithubLinkContainer>
         Copyright © 2021 aelmi03
@@ -55,6 +62,22 @@ const FooterContent = styled.div`
   justify-content: space-evenly;
   width: 100%;
   flex-grow: 1;
+`;
+
+const EmailSection = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+const EmailText = styled.h4`
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
 `;
 const LinksSection = styled.div`
   display: flex;
@@ -86,24 +109,28 @@ const FooterWrapper = styled.footer`
   border-top: 1px solid ${({ theme }) => theme.colors.primary};
   position: absolute;
   width: 100%;
+  max-width: 100%;
   justify-content: space-evenly;
   padding: 2rem 0rem 0rem 0rem;
-  height: 300px;
+  height: 320px;
   bottom: 0;
 `;
 
 const GithubLinkContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.7rem;
   padding: 1.5rem;
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  height: 60px;
+  background-color: ${({ theme }) => theme.colors.primaryText};
+  height: 50px;
+  border: none;
   width: 100%;
+  margin-top: 2rem;
   > a {
     display: flex;
     justify-content: center;

@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Nunito", sans-serif;
     font-size: 1.6rem;
     background-color: ${({ theme }) => theme.colors.primaryText};
-    margin-bottom:300px;
+    margin-bottom:320px;
   }
   #root{
     display:flex;
