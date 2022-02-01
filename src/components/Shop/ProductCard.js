@@ -26,7 +26,7 @@ const ProductCard = ({
       <ImgWrapper src={imgSrc} isRelatedProduct={isRelatedProduct}></ImgWrapper>
       <StyledHR></StyledHR>
       <NameWrapper>{name}</NameWrapper>
-      <PriceWrapper>${price}</PriceWrapper>
+      <PriceWrapper isRelatedProduct={isRelatedProduct}>${price}</PriceWrapper>
       {!isRelatedProduct && (
         <Button
           onClick={(e) => {
@@ -101,12 +101,15 @@ const NameWrapper = styled.h4`
 `;
 
 const PriceWrapper = styled.h4`
-  font-size: 2.7rem;
+  font-size: 2.6rem;
   font-family: "Roboto", sans-serif;
   color: ${({ theme }) => theme.colors.secondaryText};
-  @media (min-width: 768px) {
-    font-size: 2.9rem;
-  }
+
+  ${(props) =>
+    props.isRelatedProduct &&
+    css`
+      font-size: 2rem;
+    `}
 `;
 
 export const StyledHR = styled.hr`

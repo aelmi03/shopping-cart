@@ -38,12 +38,21 @@ const Footer = (props) => {
             Promotions
           </FooterLink>
         </LinksSection>
-        <EmailSection>
+        <EmailSection
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Thank you so much for signing up!");
+          }}
+        >
           <FooterTitle style={{ fontWeight: "400", fontFamily: "Poppins" }}>
             Join Us
           </FooterTitle>
           <EmailText>Sign up now for the latest updates and deals!</EmailText>
-          <StyledInput placeholder={"Email Address"} />
+          <StyledInput
+            placeholder={"Email Address"}
+            aria-required
+            type="email"
+          />
         </EmailSection>
       </FooterContent>
       <GithubLinkContainer>
@@ -64,7 +73,7 @@ const FooterContent = styled.div`
   flex-grow: 1;
 `;
 
-const EmailSection = styled.div`
+const EmailSection = styled.form`
   display: flex;
   flex-flow: column nowrap;
   gap: 2rem;
@@ -78,6 +87,7 @@ const EmailText = styled.h4`
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
+  color: ${({ theme }) => theme.colors.primaryLight};
 `;
 const LinksSection = styled.div`
   display: flex;
