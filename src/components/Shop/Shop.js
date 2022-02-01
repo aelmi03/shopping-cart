@@ -2,11 +2,14 @@ import styled from "styled-components";
 import ShopSideBar from "./ShopSideBar";
 import allProducts from "../../data/allProducts";
 import ProductCard from "./ProductCard";
+import ShopContent from "./ShopContent";
 import { useState } from "react";
 import { keyframes } from "styled-components";
+import { useSearchParams } from "react-router-dom";
 const Shop = ({ editCartProduct, cartProducts }) => {
   const [products, setProducts] = useState(allProducts);
   const [category, setCategory] = useState("All Products");
+  let [params, setParams] = useSearchParams();
   const getProducts = () => {
     return products.map((product) => (
       <ProductCard
@@ -25,7 +28,7 @@ const Shop = ({ editCartProduct, cartProducts }) => {
   return (
     <ShopWrapper>
       <ShopSideBar category={category} changeCategory={changeCategory} />
-      <CardsWrapper>{getProducts()}</CardsWrapper>
+      <ShopContent getProducts={getProducts} />
     </ShopWrapper>
   );
 };
@@ -50,15 +53,6 @@ const ShopWrapper = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
   }
-`;
-const CardsWrapper = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  gap: 3rem;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
 `;
 
 export default Shop;
