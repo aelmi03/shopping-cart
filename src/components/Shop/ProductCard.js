@@ -1,30 +1,47 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import Button from "../Utils/Button";
 
-const ProductCard = ({ product, editCartProduct, id, cartProducts }) => {
+const ProductCard = ({
+  product,
+  editCartProduct,
+  id,
+  cartProducts,
+  isRelatedProduct,
+}) => {
   const { name, price, imgSrc } = product;
   const navigate = useNavigate();
   return (
-    <ProductWrapper onClick={() => navigate(`/shop/${id}`, { replace: true })}>
-      <ImgWrapper src={imgSrc}></ImgWrapper>
+    <ProductWrapper
+      onClick={() => navigate(`/shop/${id}`)}
+      isRelatedProduct={isRelatedProduct}
+      style={
+        isRelatedProduct
+          ? { height: "38rem", padding: "0.5rem", width: "32rem" }
+          : {}
+      }
+    >
+      <ImgWrapper src={imgSrc} isRelatedProduct={isRelatedProduct}></ImgWrapper>
       <StyledHR></StyledHR>
       <NameWrapper>{name}</NameWrapper>
       <PriceWrapper>${price}</PriceWrapper>
-      <Button
-        onClick={(e) => {
-          e.stopPropagation();
-          const productItemAmount =
-            cartProducts.find((product) => product.id === id)?.amount + 1 || 1;
-          if (productItemAmount >= 99) return;
+      {!isRelatedProduct && (
+        <Button
+          onClick={(e) => {
+            e.stopPropagation();
+            const productItemAmount =
+              cartProducts.find((product) => product.id === id)?.amount + 1 ||
+              1;
+            if (productItemAmount >= 99) return;
 
-          editCartProduct(product, productItemAmount);
-        }}
-      >
-        Add To Cart <FaShoppingCart />
-      </Button>
+            editCartProduct(product, productItemAmount);
+          }}
+        >
+          Add To Cart <FaShoppingCart />
+        </Button>
+      )}
     </ProductWrapper>
   );
 };
@@ -52,11 +69,23 @@ const ProductWrapper = styled.div`
     height: 55rem;
     justify-content: space-evenly;
   }
+  ${(props) =>
+    props.isRelatedProduct &&
+    css`
+      border: 0.5px solid ${({ theme }) => theme.colors.primary};
+      gap: 0rem;
+    `}
 `;
 
 const ImgWrapper = styled.img`
   width: 20rem;
   height: 20rem;
+  ${(props) =>
+    props.isRelatedProduct &&
+    css`
+      width: 15rem;
+      height: 15rem;
+    `}
 `;
 
 const NameWrapper = styled.h4`

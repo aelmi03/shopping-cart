@@ -6,10 +6,7 @@ const SectionHeader = styled.h2`
   font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   @media (min-width: 768px) {
-    font-size: 3rem;
-  }
-  @media (min-width: 1024px) {
-    font-size: 3.3rem;
+    font-size: 2.8rem;
   }
 `;
 

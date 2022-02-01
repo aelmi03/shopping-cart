@@ -46,7 +46,7 @@ const ProductDisplay = ({ cartProducts, editCartProduct }) => {
         </ProductContentWrapper>
         <ProductDescription description={description} />
       </MainProductWrapper>
-      <RelatedProducts id={id} />
+      <RelatedProducts product={product} />
     </ProductDisplayWrapper>
   );
 };
