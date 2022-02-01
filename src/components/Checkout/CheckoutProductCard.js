@@ -19,7 +19,10 @@ const CheckoutProductCard = ({ product, editCartProduct }) => {
         <AmountPicker
           value={amount}
           style={{ fontSize: "1.8rem", distance: "1rem" }}
-          onAdd={editCartProduct.bind(this, product, product.amount + 1)}
+          onAdd={() => {
+            if (product.amount >= 99) return;
+            editCartProduct(product, product.amount + 1);
+          }}
           onMinus={editCartProduct.bind(this, product, product.amount - 1)}
           onChangeValue={(newAmount) => editCartProduct(product, newAmount)}
         />

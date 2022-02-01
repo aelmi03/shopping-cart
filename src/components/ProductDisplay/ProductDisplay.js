@@ -4,6 +4,7 @@ import allProducts from "../../data/allProducts";
 import ProductSideBar from "./ProductSidebar";
 import { useParams } from "react-router";
 import ProductDescription from "./ProductDescription";
+import SectionHeader from "../Utils/SectionHeader";
 
 const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   };
   return (
     <ProductDisplayWrapper>
-      <ProductHeader>{name}</ProductHeader>
+      <SectionHeader>{name}</SectionHeader>
       <ProductContentWrapper>
         <ProductImage src={imgSrc} />
         <ProductSideBar
@@ -54,19 +55,6 @@ const ProductDisplayWrapper = styled.div`
   gap: 5.5rem;
   padding: 2.5rem 1.5rem;
   width: 100%;
-`;
-
-const ProductHeader = styled.h2`
-  text-align: center;
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
-  @media (min-width: 1024px) {
-    font-size: 3.3rem;
-  }
 `;
 
 const ProductContentWrapper = styled.div`
