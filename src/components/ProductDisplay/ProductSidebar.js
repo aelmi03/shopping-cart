@@ -34,8 +34,12 @@ const ProductSideBar = ({
       <ButtonsContainer>
         <GreenButton
           onClick={(e) => {
+            const productItemAmount =
+              cartProducts.find((product) => product.id === id)?.amount || 0;
+            console.log(productItemAmount + "LEL");
             e.stopPropagation();
-            if (amountInCart === 0) return;
+            if (amountInCart === 0 || productItemAmount + amountInCart > 99)
+              return;
             editCartProduct(product, getCorrectAmount());
           }}
         >

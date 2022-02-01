@@ -16,10 +16,11 @@ const ProductCard = ({ product, editCartProduct, id, cartProducts }) => {
       <Button
         onClick={(e) => {
           e.stopPropagation();
-          editCartProduct(
-            product,
-            cartProducts.find((product) => product.id === id)?.amount + 1 || 1
-          );
+          const productItemAmount =
+            cartProducts.find((product) => product.id === id)?.amount + 1 || 1;
+          if (productItemAmount >= 99) return;
+
+          editCartProduct(product, productItemAmount);
         }}
       >
         Add To Cart <FaShoppingCart />
