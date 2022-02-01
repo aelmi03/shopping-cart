@@ -40,17 +40,17 @@ const Shop = ({ editCartProduct, cartProducts }) => {
     setParams({ filter: newValue.target.value });
   };
   return (
-    <ShopWrapper>
+    <ShopContentWrapper>
       <ShopSideBar category={category} changeCategory={changeCategory} />
       <ShopContent getProducts={getProducts} setFilter={setFilter} />
-    </ShopWrapper>
+    </ShopContentWrapper>
   );
 };
 const appearingAnimation = keyframes`
  0% { opacity:0 }
  100% {opacity:1 }
 `;
-const ShopWrapper = styled.div`
+const ShopContentWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem;

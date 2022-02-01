@@ -8,7 +8,21 @@ const ShopContent = ({ getProducts, setFilter }) => {
         <SearchText>Search: </SearchText>
         <StyledInput onChange={setFilter} />
       </InputWrapper>
-      <CardsWrapper>{getProducts()}</CardsWrapper>
+      <CardsWrapper>
+        {getProducts().length > 0 ? (
+          getProducts()
+        ) : (
+          <SearchText
+            style={{
+              fontFamily: "Poppins",
+              fontWeight: "400",
+              marginTop: "5rem",
+            }}
+          >
+            There are no products that match your filter :(
+          </SearchText>
+        )}
+      </CardsWrapper>
     </ShopContentWrapper>
   );
 };
@@ -36,10 +50,12 @@ const InputWrapper = styled.div`
 const SearchText = styled.p`
   font-family: "Montserrat", sans-serif;
   font-size: 2.25rem;
+  text-align: center;
 `;
 
 const StyledInput = styled.input`
   outline: none;
+  width: 30rem;
   box-shadow: rgb(0 0 0 / 35%) 3px 3px 12px;
   padding: 0.4rem 0.7rem;
   font-family: "Poppins", sans-serif;
