@@ -9,7 +9,11 @@ const Home = (props) => {
         <HomeHeader>
           Get these limited time deals before they sell out!
         </HomeHeader>
-        <Button>Shop Now</Button>
+        <Button
+          style={{ padding: "2rem 6rem", fontSize: "2.7rem", width: "27rem" }}
+        >
+          Shop Now
+        </Button>
       </ContentWrapper>
       <HomeImage src={homeImage}></HomeImage>
     </HomeWrapper>
@@ -20,8 +24,8 @@ const breatheAnimation = keyframes`
  100% {opacity:1 }
 `;
 const movingAnimation = keyframes`
- 0% { left:100%; }
- 100% {left:0%; }
+ 0% { left: 100%;}
+ 100% {left: 0%;}
 `;
 const HomeWrapper = styled.div`
   display: flex;
@@ -88,7 +92,6 @@ const HomeImage = styled.img`
   animation-duration: 3.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  left: 100%;
   @media (min-width: 1200px) {
     width: 40%;
   }

@@ -72,7 +72,11 @@ const ProductWrapper = styled.div`
   ${(props) =>
     props.isRelatedProduct &&
     css`
-      border: 0.5px solid ${({ theme }) => theme.colors.primary};
+      border-top: 1px dashed ${({ theme }) => theme.colors.neutral};
+      border-bottom: 1px dashed ${({ theme }) => theme.colors.neutral};
+      border-left: 1px dashed ${({ theme }) => theme.colors.secondary};
+      border-right: 1px dashed ${({ theme }) => theme.colors.secondary};
+
       gap: 0rem;
     `}
 `;

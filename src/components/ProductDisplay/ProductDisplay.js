@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import allProducts from "../../data/allProducts";
 import ProductSideBar from "./ProductSidebar";
@@ -12,7 +12,9 @@ const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   const product = allProducts.find((product) => product.id === id);
   const { name, description, price, imgSrc } = product;
   const [amountInCart, setAmountInCart] = useState(0);
-
+  useEffect(() => {
+    setAmountInCart(0);
+  }, [id]);
   const onAdd = () => {
     if (amountInCart >= 99) return;
     setAmountInCart((prevValue) => prevValue + 1);
