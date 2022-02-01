@@ -51,6 +51,7 @@ const RelatedProductsWrapper = styled.div`
   width: 90%;
   gap: 2.5rem;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 `;
 
 const RelatedProductsContainer = styled.div`
