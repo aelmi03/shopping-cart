@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
+import StyledHR from "../Utils/StyledHR";
 const ProductDescription = ({ description }) => {
   return (
     <DescriptionWrapper>
       <DescriptionTitle>Description</DescriptionTitle>
-      <DescriptionHR />
+      <StyledHR />
       <DescriptionContent>{description}</DescriptionContent>
     </DescriptionWrapper>
   );
@@ -27,20 +27,15 @@ const DescriptionTitle = styled.h2`
   font-weight: bold;
   font-family: "Montserrat";
   @media (min-width: 768px) {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
-`;
-
-const DescriptionHR = styled.hr`
-  border: 1px solid ${({ theme }) => theme.colors.secondaryText};
-  width: 100%;
 `;
 
 const DescriptionContent = styled.p`
   font-size: 2.2rem;
   font-family: "Poppins";
   @media (min-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2.35rem;
   }
 `;
 

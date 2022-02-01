@@ -5,6 +5,7 @@ import ProductSideBar from "./ProductSidebar";
 import { useParams } from "react-router";
 import ProductDescription from "./ProductDescription";
 import SectionHeader from "../Utils/SectionHeader";
+import RelatedProducts from "./RelatedProducts";
 
 const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   const { id } = useParams();
@@ -27,27 +28,30 @@ const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   };
   return (
     <ProductDisplayWrapper>
-      <SectionHeader>{name}</SectionHeader>
-      <ProductContentWrapper>
-        <ProductImage src={imgSrc} />
-        <ProductSideBar
-          price={price}
-          amountInCart={amountInCart}
-          onAdd={onAdd}
-          onMinus={onMinus}
-          onChangeValue={onChangeValue}
-          cartProducts={cartProducts}
-          editCartProduct={editCartProduct}
-          product={product}
-          id={id}
-        />
-      </ProductContentWrapper>
-      <ProductDescription description={description} />
+      <MainProductWrapper>
+        <SectionHeader>{name}</SectionHeader>
+        <ProductContentWrapper>
+          <ProductImage src={imgSrc} />
+          <ProductSideBar
+            price={price}
+            amountInCart={amountInCart}
+            onAdd={onAdd}
+            onMinus={onMinus}
+            onChangeValue={onChangeValue}
+            cartProducts={cartProducts}
+            editCartProduct={editCartProduct}
+            product={product}
+            id={id}
+          />
+        </ProductContentWrapper>
+        <ProductDescription description={description} />
+      </MainProductWrapper>
+      <RelatedProducts id={id} />
     </ProductDisplayWrapper>
   );
 };
 
-const ProductDisplayWrapper = styled.div`
+const MainProductWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -56,7 +60,13 @@ const ProductDisplayWrapper = styled.div`
   padding: 2.5rem 1.5rem;
   width: 100%;
 `;
-
+const ProductDisplayWrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2.4rem;
+  align-items: center;
+  width: 100%;
+`;
 const ProductContentWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
