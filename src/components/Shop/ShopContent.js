@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const ShopContent = ({ getProducts }) => {
+const ShopContent = ({ getProducts, setFilter }) => {
   return (
     <ShopContentWrapper>
       <InputWrapper>
-        <SearchText>Search : </SearchText>
-        <StyledInput />
+        <SearchText>Search: </SearchText>
+        <StyledInput onChange={setFilter} />
       </InputWrapper>
       <CardsWrapper>{getProducts()}</CardsWrapper>
     </ShopContentWrapper>
@@ -35,7 +35,7 @@ const InputWrapper = styled.div`
 
 const SearchText = styled.p`
   font-family: "Montserrat", sans-serif;
-  font-size: 2.1rem;
+  font-size: 2.25rem;
 `;
 
 const StyledInput = styled.input`
@@ -44,7 +44,7 @@ const StyledInput = styled.input`
   padding: 0.4rem 0.7rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   border-radius: 10px;
 `;
 

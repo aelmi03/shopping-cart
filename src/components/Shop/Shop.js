@@ -11,24 +11,38 @@ const Shop = ({ editCartProduct, cartProducts }) => {
   const [category, setCategory] = useState("All Products");
   let [params, setParams] = useSearchParams();
   const getProducts = () => {
-    return products.map((product) => (
-      <ProductCard
-        product={product}
-        key={product.id}
-        id={product.id}
-        editCartProduct={editCartProduct}
-        cartProducts={cartProducts}
-      />
-    ));
+    return products
+      .filter((product) => {
+        const lowerCaseFilter = params.get("filter")?.toLowerCase() || "";
+        const lowerCaseProductName = product.name.toLowerCase();
+        return lowerCaseProductName.includes(lowerCaseFilter);
+      })
+      .map((product) => (
+        <ProductCard
+          product={product}
+          key={product.id}
+          id={product.id}
+          editCartProduct={editCartProduct}
+          cartProducts={cartProducts}
+        />
+      ));
   };
   const changeCategory = (categoryName, products) => {
     setProducts(products);
     setCategory(categoryName);
   };
+
+  const setFilter = (newValue) => {
+    if (!newValue.target.value) {
+      setParams({});
+      return;
+    }
+    setParams({ filter: newValue.target.value });
+  };
   return (
     <ShopWrapper>
       <ShopSideBar category={category} changeCategory={changeCategory} />
-      <ShopContent getProducts={getProducts} />
+      <ShopContent getProducts={getProducts} setFilter={setFilter} />
     </ShopWrapper>
   );
 };
