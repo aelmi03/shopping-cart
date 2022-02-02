@@ -25,7 +25,6 @@ const ProductDisplay = ({ cartProducts, editCartProduct }) => {
   };
 
   const onChangeValue = (newValue) => {
-    console.log(newValue);
     setAmountInCart(newValue);
   };
   return (

@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 
 const StyledLink = ({ ...props }) => {
-  console.log(props.children);
   return (
     <NavLink
       className={({ isActive }) => {

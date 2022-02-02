@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeader from "../Utils/SectionHeader";
 import styled from "styled-components";
 import StyledHR from "../Utils/StyledHR";
@@ -10,37 +10,40 @@ import computers from "../../data/computers";
 import { getSimiliarItems } from "../Utils/utils";
 import ProductCard from "../Shop/ProductCard";
 const RelatedProducts = ({ product }) => {
-  const getCategoryArrayOfProduct = () => {
-    if (phones.some((item) => item.id === product.id)) {
-      return phones;
-    } else if (tablets.some((item) => item.id === product.id)) {
-      return tablets;
-    } else if (laptops.some((item) => item.id === product.id)) {
-      return laptops;
-    } else if (headphones.some((item) => item.id === product.id)) {
-      return headphones;
-    } else {
-      return computers;
-    }
-  };
-  const getRelatedProducts = () => {
-    const categoryArray = getCategoryArrayOfProduct();
-    return getSimiliarItems(product, categoryArray, 6).map((product) => (
-      <ProductCard
-        key={product.id}
-        product={product}
-        id={product.id}
-        isRelatedProduct={true}
-      />
-    ));
-  };
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  useEffect(() => {
+    const getCategoryArrayOfProduct = () => {
+      if (phones.some((item) => item.id === product.id)) {
+        return phones;
+      } else if (tablets.some((item) => item.id === product.id)) {
+        return tablets;
+      } else if (laptops.some((item) => item.id === product.id)) {
+        return laptops;
+      } else if (headphones.some((item) => item.id === product.id)) {
+        return headphones;
+      } else {
+        return computers;
+      }
+    };
+    const getRelatedProducts = () => {
+      const categoryArray = getCategoryArrayOfProduct();
+      return getSimiliarItems(product, categoryArray, 6).map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          id={product.id}
+          isRelatedProduct={true}
+        />
+      ));
+    };
+    setRelatedProducts(getRelatedProducts());
+  }, [product]);
+
   return (
     <RelatedProductsWrapper>
       <SectionHeader>Related Products</SectionHeader>
       <StyledHR />
-      <RelatedProductsContainer>
-        {getRelatedProducts()}
-      </RelatedProductsContainer>
+      <RelatedProductsContainer>{relatedProducts}</RelatedProductsContainer>
     </RelatedProductsWrapper>
   );
 };

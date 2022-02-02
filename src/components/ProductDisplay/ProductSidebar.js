@@ -18,7 +18,6 @@ const ProductSideBar = ({
 }) => {
   const getCorrectAmount = () => {
     let number = cartProducts.find((product) => product.id === id)?.amount || 0;
-    console.log(number);
     return number + amountInCart;
   };
   const navigate = useNavigate();
@@ -36,7 +35,6 @@ const ProductSideBar = ({
           onClick={(e) => {
             const productItemAmount =
               cartProducts.find((product) => product.id === id)?.amount || 0;
-            console.log(productItemAmount + "LEL");
             e.stopPropagation();
             if (amountInCart === 0 || productItemAmount + amountInCart > 99)
               return;

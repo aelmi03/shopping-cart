@@ -9,14 +9,10 @@ import { useState } from "react";
 
 function App() {
   let [cartProducts, setCartProducts] = useState([]);
-  console.log(cartProducts);
   const deleteProduct = (productObject) => {
-    console.log("DELETING PRODUCT!!! " + productObject.name);
-
     setCartProducts((prevProducts) => {
       return prevProducts.filter((product) => product.id !== productObject.id);
     });
-    console.log("WE LITT");
   };
   const addProduct = (productObject, amount) => {
     setCartProducts([...cartProducts, { ...productObject, amount }]);

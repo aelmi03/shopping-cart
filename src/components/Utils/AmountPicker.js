@@ -2,7 +2,6 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import styled, { css } from "styled-components";
 
 const AmountPicker = ({ value, onAdd, onMinus, onChangeValue, style }) => {
-  console.log(value);
   return (
     <AmountPickerWrapper style={style}>
       <FaMinus onClick={onMinus} style={{ cursor: "pointer" }} />

@@ -4,7 +4,6 @@ import StyledLink from "./StyledLink";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = ({ cartAmount }) => {
-  console.log(cartAmount);
   return (
     <NavbarWrapper>
       <StyledLink to="/">Home</StyledLink>
