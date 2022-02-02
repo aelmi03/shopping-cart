@@ -57,7 +57,7 @@ function App() {
     }, 0);
   };
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header cartAmount={getAmountTotal()} />
       <Routes>
         <Route path="/" element={<Home />} />
