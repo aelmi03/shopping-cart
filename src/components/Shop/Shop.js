@@ -4,7 +4,7 @@ import allProducts from "../../data/allProducts";
 import ProductCard from "./ProductCard";
 import ShopContent from "./ShopContent";
 import { useState } from "react";
-import { keyframes } from "styled-components";
+import { breatheAnimation } from "../Utils/animations";
 import { useSearchParams } from "react-router-dom";
 const Shop = ({ editCartProduct, cartProducts }) => {
   const [products, setProducts] = useState(allProducts);
@@ -46,17 +46,14 @@ const Shop = ({ editCartProduct, cartProducts }) => {
     </ShopContentWrapper>
   );
 };
-const appearingAnimation = keyframes`
- 0% { opacity:0 }
- 100% {opacity:1 }
-`;
+
 const ShopContentWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem;
   width: 100%;
-  animation-name: ${appearingAnimation};
-  animation-duration: 2s;
+  animation-name: ${breatheAnimation};
+  animation-duration: 1s;
   animation-iteration-count: 1;
   padding: 4rem;
   align-items: center;

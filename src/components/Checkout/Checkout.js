@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CheckoutProducts from "./CheckoutProducts";
 import CheckoutPrice from "./CheckoutPrice";
 import EmptyCart from "./EmptyCart";
+import { breatheAnimation } from "../Utils/animations";
 import { FaCartPlus } from "react-icons/fa";
 
 const Checkout = ({ cartProducts, editCartProduct, totalValue, resetCart }) => {
@@ -38,6 +39,9 @@ const CheckoutWrapper = styled.div`
   gap: 4.5rem;
   flex-grow: 1;
   padding: 2rem;
+  animation-name: ${breatheAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `;
 
 const CheckoutTitle = styled.h2`

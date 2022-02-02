@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import allProducts from "../../data/allProducts";
+import { breatheAnimation } from "../Utils/animations";
 import ProductSideBar from "./ProductSidebar";
 import { useParams } from "react-router";
 import ProductDescription from "./ProductDescription";
@@ -67,6 +68,9 @@ const ProductDisplayWrapper = styled.div`
   gap: 2.4rem;
   align-items: center;
   width: 100%;
+  animation-name: ${breatheAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `;
 const ProductContentWrapper = styled.div`
   display: flex;

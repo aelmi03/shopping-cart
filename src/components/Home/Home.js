@@ -1,7 +1,8 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import homeImage from "../../assets/home-image.jpeg";
 import Button from "../Utils/Button";
 import { useNavigate } from "react-router";
+import { breatheAnimation, movingAnimation } from "../Utils/animations";
 const Home = () => {
   let navigate = useNavigate();
   return (
@@ -22,14 +23,7 @@ const Home = () => {
     </HomeWrapper>
   );
 };
-const breatheAnimation = keyframes`
- 0% { opacity:0 }
- 100% {opacity:1 }
-`;
-const movingAnimation = keyframes`
- 0% { left: 100%;}
- 100% {left: 0%;}
-`;
+
 const HomeWrapper = styled.div`
   display: flex;
   text-align: center;
