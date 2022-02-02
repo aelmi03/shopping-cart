@@ -1,7 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import homeImage from "../../assets/home-image.jpeg";
 import Button from "../Utils/Button";
-const Home = (props) => {
+import { useNavigate } from "react-router";
+const Home = () => {
+  let navigate = useNavigate();
   return (
     <HomeWrapper>
       <ContentWrapper>
@@ -11,6 +13,7 @@ const Home = (props) => {
         </HomeHeader>
         <Button
           style={{ padding: "2rem 6rem", fontSize: "2.7rem", width: "27rem" }}
+          onClick={() => navigate("/shop")}
         >
           Shop Now
         </Button>
