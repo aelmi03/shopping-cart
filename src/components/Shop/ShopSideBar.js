@@ -50,6 +50,7 @@ const ShopHeading = styled.div`
   display: flex;
   flex-flow: column nowrap;
   gap: 1.2rem;
+  width: 28rem;
 `;
 
 const ShopTitle = styled.h3`
