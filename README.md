@@ -26,7 +26,7 @@ A simple shopping cart application built with React.
 ### Product Display Page
 
 ![productPage1](https://user-images.githubusercontent.com/77712082/152086522-de4829ef-3d12-4cea-a19d-0c0bf7dffcde.png)
-![productPage2](https://user-images.githubusercontent.com/77712082/152086536-ac2a67e0-17b6-470b-8aec-2c6bb4e226b5.png)
+![productPage2](https://user-images.githubusercontent.com/77712082/152086988-ce902170-5ae3-4f8b-88f9-2c2761fbcbd4.png)
 
 ### Checkout Page
 
