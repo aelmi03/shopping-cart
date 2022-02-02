@@ -43,6 +43,9 @@ const CheckoutProductCardWrapper = styled.div`
   text-align: center;
   background-color: white;
   border-bottom: 1px solid ${({ theme }) => theme.colors.neutral};
+  @media (min-width: 1024px) {
+    width: 42rem;
+  }
 `;
 
 const ImgWrapper = styled.img`
@@ -70,10 +73,14 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  padding: 0rem 0.5rem;
 `;
 
 const PriceAmount = styled.h4`
   font-size: "Montserrat", sans-serif;
   font-size: 1.5rem;
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 export default CheckoutProductCard;

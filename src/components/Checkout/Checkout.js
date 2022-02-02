@@ -3,11 +3,15 @@ import styled from "styled-components";
 import CheckoutProducts from "./CheckoutProducts";
 import CheckoutPrice from "./CheckoutPrice";
 import EmptyCart from "./EmptyCart";
+import { FaCartPlus } from "react-icons/fa";
 
 const Checkout = ({ cartProducts, editCartProduct, totalValue, resetCart }) => {
   return (
     <CheckoutWrapper>
-      <CheckoutTitle>Your Shopping Bag</CheckoutTitle>
+      <CheckoutTitle>
+        Your Shopping Bag{" "}
+        <FaCartPlus style={{ width: "50px", height: "50px" }} />
+      </CheckoutTitle>
       {cartProducts.length !== 0 ? (
         <React.Fragment>
           <CheckoutContent>
@@ -47,7 +51,16 @@ const CheckoutTitle = styled.h2`
   align-items: center;
   gap: 1.5rem;
   @media (min-width: 768px) {
-    font-size: 3.4rem;
+    font-size: 4.25rem;
+  }
+  @media (min-width: 1440px) {
+    font-size: 4.45rem;
+  }
+
+  @media (max-width: 539px) {
+    > svg {
+      display: none;
+    }
   }
 `;
 

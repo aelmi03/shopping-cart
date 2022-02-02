@@ -30,7 +30,7 @@ const CheckoutPrice = ({ totalValue, resetCart }) => {
       <Button
         style={{
           padding: "1rem 3rem",
-          fontSize: "2rem",
+          fontSize: "2.3rem",
           width: "26rem",
           marginTop: "1rem",
         }}
@@ -53,7 +53,7 @@ const CheckoutPriceWrapper = styled.div`
   padding: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  border: 0.5px solid ${({ theme }) => theme.colors.lightGray};
+  border: 0.5px solid ${({ theme }) => theme.colors.neutral};
   border-radius: 5px;
   height: 25rem;
   @media (min-width: 768px) {
@@ -81,6 +81,9 @@ const BoldText = styled.h3`
   @media (min-width: 768px) {
     font-size: 1.9rem;
   }
+  @media (min-width: 1024px) {
+    font-size: 2.25rem;
+  }
 `;
 
 const PriceText = styled.h3`
@@ -89,6 +92,9 @@ const PriceText = styled.h3`
   @media (min-width: 768px) {
     font-size: 2rem;
   }
+  @media (min-width: 1024px) {
+    font-size: 2.3rem;
+  }
 `;
 
 const TotalPriceText = styled.h3`
@@ -96,5 +102,8 @@ const TotalPriceText = styled.h3`
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  @media (min-width: 1024px) {
+    font-size: 2.4rem;
+  }
 `;
 export default CheckoutPrice;
